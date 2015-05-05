@@ -14,7 +14,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import extrabiomes.autumn.proxy.CommonProxy;
-import extrabiomes.core.BiomeRegistry;
+import extrabiomes.lib.BiomeUtils;
+import extrabiomes.lib.Const;
 import extrabiomes.lib.IEBXSMod;
 
 import java.io.File;
@@ -36,17 +37,21 @@ public class AutumnWoods implements IEBXSMod
 
     static File          BaseDir;
     static Configuration Config;
+    
+    public Logger log() {
+    	return LOGGER;
+    }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        BaseDir = new File(event.getModConfigurationDirectory(), Version.PREFIX_LONG);
+        BaseDir = new File(event.getModConfigurationDirectory(), Const.PREFIX_LONG);
         if ( !BaseDir.exists() )
             BaseDir.mkdir();
 
         Config  = new Configuration( new File(BaseDir, getClass().getSimpleName().toLowerCase() + ".cfg") );
         
-        BiomeRegistry.register(this);
+        BiomeUtils.register(this);
     }
 
     @EventHandler
