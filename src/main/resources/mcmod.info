@@ -1,14 +1,14 @@
 [
 {
-  "modid": "ExampleMod",
-  "name": "Example Mod",
-  "description": "",
+  "modid": "ExtrabiomesCore",
+  "name": "Extrabiomes Core",
+  "description": "Core functionality of all Extrabiomes mods.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "http://extrabiomes.com/core",
   "updateUrl": "",
-  "authorList": [""],
-  "credits": "",
+  "authorList": ["allaryin"],
+  "credits": "Extrabiomes Team",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
