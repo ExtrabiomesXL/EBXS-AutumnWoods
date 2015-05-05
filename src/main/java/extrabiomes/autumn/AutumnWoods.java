@@ -7,13 +7,17 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.config.Configuration;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import extrabiomes.core.BiomeRegistry;
+import extrabiomes.lib.IEBXSMod;
 
 import java.io.File;
 
 @Mod(modid = Version.MOD_ID, version = Version.VERSION)
-public class AutumnWoods
+public class AutumnWoods implements IEBXSMod
 {
     static final Minecraft MC = Minecraft.getMinecraft();
 
@@ -31,6 +35,8 @@ public class AutumnWoods
 
         if ( !BaseDir.exists() )
             BaseDir.mkdir();
+        
+        BiomeRegistry.register(this);
     }
 
     @EventHandler
