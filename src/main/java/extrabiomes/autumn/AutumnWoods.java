@@ -30,11 +30,11 @@ public class AutumnWoods implements IEBXSMod
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-        BaseDir = new File(event.getModConfigurationDirectory(), Version.MOD_ID);
-        Config  = new Configuration( event.getSuggestedConfigurationFile() );
-
+        BaseDir = new File(event.getModConfigurationDirectory(), Version.PREFIX_LONG);
         if ( !BaseDir.exists() )
             BaseDir.mkdir();
+
+        Config  = new Configuration( new File(BaseDir, getClass().getSimpleName().toLowerCase() + ".cfg") );
         
         BiomeRegistry.register(this);
     }
