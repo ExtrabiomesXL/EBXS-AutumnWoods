@@ -1,8 +1,8 @@
 [
 {
-  "modid": "ExtrabiomesCore",
-  "name": "Extrabiomes Core",
-  "description": "Core functionality of all Extrabiomes mods.",
+  "modid": "ExtrabiomesAutumnWoods",
+  "name": "Extrabiomes Autumn Woods",
+  "description": "Autumn Woods biome and everything that comes with it.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "http://extrabiomes.com/core",
@@ -11,6 +11,6 @@
   "credits": "Extrabiomes Team",
   "logoFile": "",
   "screenshots": [],
-  "dependencies": []
+  "dependencies": ["ExtrabiomesCore"]
 }
 ]
