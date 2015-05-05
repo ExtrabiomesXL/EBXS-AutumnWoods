@@ -38,10 +38,6 @@ public class AutumnWoods implements IEBXSMod
     static File          BaseDir;
     static Configuration Config;
     
-    public Logger log() {
-    	return LOGGER;
-    }
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
