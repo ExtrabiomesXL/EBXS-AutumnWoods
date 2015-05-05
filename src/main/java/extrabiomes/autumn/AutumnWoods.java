@@ -1,4 +1,4 @@
-package extrabiomes.core;
+package extrabiomes.autumn;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 import java.io.File;
 
 @Mod(modid = Version.MOD_ID, version = Version.VERSION)
-public class Core
+public class AutumnWoods
 {
     static final Minecraft MC = Minecraft.getMinecraft();
 
