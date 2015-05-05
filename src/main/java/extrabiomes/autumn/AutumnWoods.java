@@ -2,6 +2,8 @@ package extrabiomes.autumn;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -11,15 +13,23 @@ import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import extrabiomes.autumn.proxy.CommonProxy;
 import extrabiomes.core.BiomeRegistry;
 import extrabiomes.lib.IEBXSMod;
 
 import java.io.File;
 
-@Mod(modid = Version.MOD_ID, version = Version.VERSION)
+@Mod(modid = Version.MOD_ID, name = Version.MOD_NAME, version = Version.VERSION, 
+	dependencies = "required-after:"+extrabiomes.core.Version.MOD_ID)
 public class AutumnWoods implements IEBXSMod
 {
     static final Minecraft MC = Minecraft.getMinecraft();
+    
+    @Instance(Version.MOD_ID)
+    public static AutumnWoods instance;
+    
+    @SidedProxy(clientSide = Version.CLIENT_PROXY, serverSide = Version.SERVER_PROXY)
+    public static CommonProxy proxy;
 
     static final Logger  LOGGER  = LogManager.getFormatterLogger(Version.MOD_ID);
     static final Boolean DEV     = Boolean.parseBoolean( System.getProperty("development", "false") );
