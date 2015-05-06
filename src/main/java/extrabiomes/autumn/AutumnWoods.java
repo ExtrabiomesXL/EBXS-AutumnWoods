@@ -41,14 +41,17 @@ public class AutumnWoods extends ModBase implements IEBXSMod
     }
     
     public void ebxsPreInit() {
-    	
+    	/// BlockHandler.init();
+    	/// ItemHandler.init();
+    	/// CropHandler.init();
     }
     
     public void ebxsInit() {
     	LOGGER.info("Loaded version %s, API version %s", Version.VERSION, Const.API_VERSION);
+    	proxy.registerRenderInformation();
     }
     
     public void ebxsPostInit() {
-    	
+    	/// RecipeHandler.init();
     }
 }
