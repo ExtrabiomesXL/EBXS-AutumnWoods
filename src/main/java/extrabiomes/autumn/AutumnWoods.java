@@ -1,5 +1,6 @@
 package extrabiomes.autumn;
 
+import cpw.mods.fml.common.IWorldGenerator;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -11,13 +12,18 @@ import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+
 import extrabiomes.autumn.proxy.CommonProxy;
+import extrabiomes.lib.BiomeSettings;
 import extrabiomes.lib.BiomeUtils;
 import extrabiomes.lib.Const;
 import extrabiomes.lib.IEBXSMod;
 import extrabiomes.lib.ModBase;
 
 import java.io.File;
+import java.util.List;
 
 @Mod(modid = Version.MOD_ID, name = Version.MOD_NAME, version = Version.VERSION, 
 	dependencies = "required-after:"+extrabiomes.core.Version.MOD_ID)
@@ -26,7 +32,7 @@ public class AutumnWoods extends ModBase implements IEBXSMod
     public AutumnWoods() {
 		super(Version.MOD_ID);
 	}
-
+    
 	@Instance(Version.MOD_ID)
     public static AutumnWoods instance;
     
@@ -37,6 +43,7 @@ public class AutumnWoods extends ModBase implements IEBXSMod
     public void preInit(FMLPreInitializationEvent event)
     {
         basePreInit(event);
+        BiomeCollection.init();
         BiomeUtils.register(this, Const.API_VERSION);
     }
     
@@ -54,4 +61,13 @@ public class AutumnWoods extends ModBase implements IEBXSMod
     public void ebxsPostInit() {
     	/// RecipeHandler.init();
     }
+
+	public List<BiomeSettings> getBiomeSettings() {
+		return BiomeCollection.allSettings;
+	}
+
+    private List<Class<? extends IWorldGenerator>> worldGens = ImmutableList.of();
+	public List<Class<? extends IWorldGenerator>> getWorldGenerators() {
+		return worldGens;
+	}
 }
