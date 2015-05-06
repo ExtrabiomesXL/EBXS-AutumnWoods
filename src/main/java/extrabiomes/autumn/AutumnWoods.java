@@ -44,6 +44,7 @@ public class AutumnWoods extends ModBase implements IEBXSMod
     {
         basePreInit(event);
         BiomeCollection.init();
+        ConfigurationHandler.init(Config);
         BiomeUtils.register(this, Const.API_VERSION);
     }
     

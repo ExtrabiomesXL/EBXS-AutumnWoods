@@ -15,7 +15,7 @@ public enum BiomeCollection {
 	public final BiomeSettings settings;
 	
 	private BiomeCollection(int defaultID, Class<? extends BiomeGenBase> biomeClass) {
-		settings = new BiomeSettings(defaultID, biomeClass);
+		settings = new BiomeSettings(this.name().toLowerCase(), defaultID, biomeClass);
 	}
 	
 	public static final List<BiomeSettings> allSettings = Lists.newArrayList();
