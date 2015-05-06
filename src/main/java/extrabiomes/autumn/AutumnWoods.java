@@ -47,18 +47,13 @@ public class AutumnWoods implements IEBXSMod
 
         Config  = new Configuration( new File(BaseDir, getClass().getSimpleName().toLowerCase() + ".cfg") );
         
-        BiomeUtils.register(this);
+        BiomeUtils.register(this, Const.API_VERSION);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        // Need events? Uncomment these:
-        //MinecraftForge.EVENT_BUS.register(this);
-        //FMLCommonHandler.instance().bus().register(this);
-        //LOGGER.debug("Registered events");
-
-        LOGGER.info("Loaded version %s", Version.VERSION);
+        LOGGER.info("Loaded version %s, API version %s", Version.VERSION, Const.API_VERSION);
     }
 
     @EventHandler
