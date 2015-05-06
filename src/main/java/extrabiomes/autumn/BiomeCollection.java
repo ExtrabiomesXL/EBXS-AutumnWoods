@@ -8,13 +8,14 @@ import com.google.common.collect.Lists;
 
 import extrabiomes.autumn.biomes.BiomeAutumnWoods;
 import extrabiomes.lib.BiomeSettings;
+import extrabiomes.lib.ExtrabiomeGenBase;
 
 public enum BiomeCollection {
 	AUTUMN_WOODS(61, BiomeAutumnWoods.class);
 	
 	public final BiomeSettings settings;
 	
-	private BiomeCollection(int defaultID, Class<? extends BiomeGenBase> biomeClass) {
+	private BiomeCollection(int defaultID, Class<? extends ExtrabiomeGenBase> biomeClass) {
 		settings = new BiomeSettings(this.name().toLowerCase(), defaultID, biomeClass);
 	}
 	
