@@ -4,8 +4,6 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.config.Configuration;
@@ -49,16 +47,16 @@ public class AutumnWoods implements IEBXSMod
         
         BiomeUtils.register(this, Const.API_VERSION);
     }
-
-    @EventHandler
-    public void init(FMLInitializationEvent event)
-    {
-        LOGGER.info("Loaded version %s, API version %s", Version.VERSION, Const.API_VERSION);
+    
+    public void ebxsPreInit() {
+    	
     }
-
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent event)
-    {
-
+    
+    public void ebxsInit() {
+    	LOGGER.info("Loaded version %s, API version %s", Version.VERSION, Const.API_VERSION);
+    }
+    
+    public void ebxsPostInit() {
+    	
     }
 }
