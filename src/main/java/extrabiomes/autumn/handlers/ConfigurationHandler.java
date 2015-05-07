@@ -1,7 +1,7 @@
 package extrabiomes.autumn.handlers;
 
 import extrabiomes.autumn.BiomeCollection;
-import extrabiomes.lib.BiomeSettings;
+import extrabiomes.lib.settings.BiomeSettings;
 import net.minecraftforge.common.config.Configuration;
 
 public class ConfigurationHandler {
