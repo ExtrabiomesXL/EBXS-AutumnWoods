@@ -15,6 +15,9 @@ import org.apache.logging.log4j.Logger;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 
+import extrabiomes.autumn.handlers.BlockHandler;
+import extrabiomes.autumn.handlers.ConfigurationHandler;
+import extrabiomes.autumn.handlers.ItemHandler;
 import extrabiomes.autumn.proxy.CommonProxy;
 import extrabiomes.lib.BiomeSettings;
 import extrabiomes.lib.BiomeUtils;
@@ -49,8 +52,8 @@ public class AutumnWoods extends ModBase implements IEBXSMod
     }
     
     public void ebxsPreInit() {
-    	/// BlockHandler.init();
-    	/// ItemHandler.init();
+    	BlockHandler.init();
+    	ItemHandler.init();
     	/// CropHandler.init();
     }
     
