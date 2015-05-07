@@ -2,7 +2,7 @@ package extrabiomes.autumn.biomes;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import extrabiomes.autumn.BiomeCollection;
+import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.lib.ExtrabiomeGenBase;
 import extrabiomes.lib.settings.BiomeSettings;
 import net.minecraft.entity.passive.EntityWolf;

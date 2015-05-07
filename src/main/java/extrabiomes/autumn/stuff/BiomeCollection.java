@@ -1,4 +1,4 @@
-package extrabiomes.autumn;
+package extrabiomes.autumn.stuff;
 
 import java.util.List;
 
