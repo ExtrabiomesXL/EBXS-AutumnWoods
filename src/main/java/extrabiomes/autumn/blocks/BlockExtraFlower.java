@@ -7,6 +7,8 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import extrabiomes.autumn.AutumnWoods;
 import extrabiomes.autumn.Version;
+import extrabiomes.lib.IExtraBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -14,11 +16,12 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 
-public class BlockExtraFlower extends BlockFlower {
+public class BlockExtraFlower extends BlockFlower implements IExtraBlock {
 
 	public enum BlockType {
-		ALLIUM(0, 3, "allium", 13),
-		REDROVER(1, 3, "redrover", 1);
+		AUTUMN_SHRUB(0, 3, "autumnshrub", 13),
+		RED_ROVER(1, 3, "redrover", 1),
+		DELPHINIUM_BELLADONNA(2, 3, "belladonna", 4);
 		
 		public final int	metadata;
 		public final int	weight;
@@ -54,6 +57,12 @@ public class BlockExtraFlower extends BlockFlower {
 	// NB: may need to switch to a generic block manually implementing IPlantable
 	public BlockExtraFlower() {
 		super(0);
+		setBlockName(Version.LOC_PREFIX+".flower");
+		setTickRandomly(true);
+		setHardness(0.0f);
+		setStepSound(Block.soundTypeGrass);
+		// TODO: add our own tab again
+		setCreativeTab(CreativeTabs.tabDecorations);
 	}
 	
 	@Override

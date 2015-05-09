@@ -7,6 +7,8 @@ public abstract class Version {
 	public static final String MOD_NAME		= "Extrabiomes Autumn Woods";
 	public static final String VERSION		= "0.0";
 
+	public static final String LOC_PREFIX   = "extrabiomes.autumn";
+	
 	public static final String CHANNEL		= MOD_ID;
 	public static final String TEXTURE_PATH = MOD_ID.toLowerCase(Locale.ENGLISH) + ":";
 	
