@@ -1,5 +1,7 @@
 package extrabiomes.autumn.handlers;
 
+import net.minecraft.item.ItemBlock;
+import cpw.mods.fml.common.registry.GameRegistry;
 import extrabiomes.autumn.blocks.BlockExtraFlower;
 import extrabiomes.autumn.stuff.BlockCollection;
 import extrabiomes.lib.settings.BlockSettings;
@@ -17,6 +19,9 @@ public abstract class BlockHandler {
 		if( !settings.isEnabled() ) return;
 		
 		final BlockExtraFlower block = new BlockExtraFlower();
+		GameRegistry.registerBlock(block, ItemBlock.class, "flower");
+		
+		// TODO: register with forestry
 	}
 
 }

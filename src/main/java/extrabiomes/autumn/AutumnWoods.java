@@ -20,9 +20,11 @@ import extrabiomes.autumn.handlers.ConfigurationHandler;
 import extrabiomes.autumn.handlers.ItemHandler;
 import extrabiomes.autumn.proxy.CommonProxy;
 import extrabiomes.autumn.stuff.BiomeCollection;
+import extrabiomes.autumn.stuff.BlockCollection;
 import extrabiomes.lib.BiomeUtils;
 import extrabiomes.lib.Const;
 import extrabiomes.lib.IEBXSMod;
+import extrabiomes.lib.IEBXSSubMod;
 import extrabiomes.lib.ModBase;
 import extrabiomes.lib.settings.BiomeSettings;
 
@@ -31,7 +33,7 @@ import java.util.List;
 
 @Mod(modid = Version.MOD_ID, name = Version.MOD_NAME, version = Version.VERSION, 
 	dependencies = "required-after:"+Const.API_MOD_ID)
-public class AutumnWoods extends ModBase implements IEBXSMod
+public class AutumnWoods extends ModBase implements IEBXSSubMod
 {
     public AutumnWoods() {
 		super(Version.MOD_ID);
@@ -47,23 +49,29 @@ public class AutumnWoods extends ModBase implements IEBXSMod
     public void preInit(FMLPreInitializationEvent event)
     {
         basePreInit(event);
+        
         BiomeCollection.init();
+        BlockCollection.init();
         ConfigurationHandler.init(Config);
+        
         BiomeUtils.register(this, Const.API_VERSION);
     }
     
     public void ebxsPreInit() {
+    	super.ebxsPreInit();
     	BlockHandler.init();
     	ItemHandler.init();
     	/// CropHandler.init();
     }
     
     public void ebxsInit() {
+    	super.ebxsInit();
     	LOGGER.info("Loaded version %s, API version %s", Version.VERSION, Const.API_VERSION);
     	proxy.registerRenderInformation();
     }
     
     public void ebxsPostInit() {
+    	super.ebxsPostInit();
     	/// RecipeHandler.init();
     }
 
