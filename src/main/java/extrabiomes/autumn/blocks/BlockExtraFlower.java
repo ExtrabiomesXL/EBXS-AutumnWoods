@@ -1,26 +1,53 @@
 package extrabiomes.autumn.blocks;
 
 import java.util.List;
+import java.util.Locale;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import extrabiomes.autumn.AutumnWoods;
+import extrabiomes.autumn.Version;
 import net.minecraft.block.BlockFlower;
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 
 public class BlockExtraFlower extends BlockFlower {
 
 	public enum BlockType {
-		FLOWER_ONE(0, 3),
-		FLOWER_TWO(1, 6);
+		ALLIUM(0, 3, "allium", 13),
+		REDROVER(1, 3, "redrover", 1);
 		
 		public final int	metadata;
-		public final int	weight;		
+		public final int	weight;
+		public final int	color;
 		
-		private BlockType(int metadata, int weight) {
+		public final String	texture;
+		
+		private BlockType(int metadata, int weight, String texture, int color) {
 			this.metadata = metadata;
 			this.weight = weight;
+			this.texture = texture;
+			this.color = color;
+		}
+		
+		private IIcon icon;
+		public IIcon getIcon() {
+			return icon;
+		}
+		
+		@SideOnly(Side.CLIENT)
+		public IIcon registerIcon(IIconRegister iconRegister) {
+			icon = iconRegister.registerIcon(Version.TEXTURE_PATH + this.texture);
+			return icon;
+		}
+		
+		public static BlockType getBlockType(int metadata) {
+			if( metadata < 0 || metadata > BlockType.values().length )
+				return null;
+			return BlockType.values()[metadata];
 		}
 	}
 	
@@ -36,8 +63,41 @@ public class BlockExtraFlower extends BlockFlower {
 			itemList.add(new ItemStack(this, 1, type.metadata));
 		}
 	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerBlockIcons(IIconRegister iconRegister) {
+		AutumnWoods.LOGGER.debug(this.getClass().getSimpleName() + ": registerIcons");
+		for( BlockType type : BlockType.values() ) {
+			final IIcon icon = type.registerIcon(iconRegister);
+			if( icon == null ) {
+				AutumnWoods.LOGGER.warn("No icon found for %s (%d)", type, type.metadata);
+			} else {
+				AutumnWoods.LOGGER.debug("%s: %s = %s", this.getClass().getSimpleName(), type, icon);
+			}
+		}
+	}
+	
+	@Override
+	@SideOnly(Side.CLIENT)
+	public IIcon getIcon(int side, int metadata) {
+		final BlockType type = BlockType.getBlockType(metadata);
+		if( type != null ) {
+			return type.getIcon();
+		} else {
+			return null;
+		}
+	}
 
-	// TODO: addInformation
-	// TODO: getUnlocalizedName
+	public String getUnlocalizedName(int metadata) {
+		if( metadata < 0 || metadata > BlockType.values().length )
+			return null;
+		final BlockType type = BlockType.values()[metadata];
+		if( type != null ) {
+			return this.getUnlocalizedName() + "." + type.name().toLowerCase(Locale.ENGLISH);
+		} else {
+			return "";
+		}
+	}
 	
 }

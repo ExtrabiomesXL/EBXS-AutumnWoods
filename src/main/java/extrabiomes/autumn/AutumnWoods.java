@@ -30,7 +30,7 @@ import java.io.File;
 import java.util.List;
 
 @Mod(modid = Version.MOD_ID, name = Version.MOD_NAME, version = Version.VERSION, 
-	dependencies = "required-after:"+extrabiomes.core.Version.MOD_ID)
+	dependencies = "required-after:"+Const.API_MOD_ID)
 public class AutumnWoods extends ModBase implements IEBXSMod
 {
     public AutumnWoods() {
