@@ -1,10 +1,10 @@
 package extrabiomes.autumn.handlers;
 
+import net.minecraftforge.common.config.Configuration;
 import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.autumn.stuff.BlockCollection;
 import extrabiomes.lib.settings.BiomeSettings;
 import extrabiomes.lib.settings.BlockSettings;
-import net.minecraftforge.common.config.Configuration;
 
 public class ConfigurationHandler {
 

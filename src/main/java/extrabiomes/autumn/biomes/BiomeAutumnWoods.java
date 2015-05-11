@@ -1,15 +1,14 @@
 package extrabiomes.autumn.biomes;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import extrabiomes.autumn.stuff.BiomeCollection;
-import extrabiomes.lib.ExtrabiomeGenBase;
-import extrabiomes.lib.settings.BiomeSettings;
 import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraftforge.common.BiomeDictionary.Type;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import extrabiomes.autumn.stuff.BiomeCollection;
+import extrabiomes.lib.ExtrabiomeGenBase;
 
 public class BiomeAutumnWoods extends ExtrabiomeGenBase {
 

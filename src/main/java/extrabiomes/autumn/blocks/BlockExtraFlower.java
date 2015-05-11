@@ -3,11 +3,6 @@ package extrabiomes.autumn.blocks;
 import java.util.List;
 import java.util.Locale;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-import extrabiomes.autumn.AutumnWoods;
-import extrabiomes.autumn.Version;
-import extrabiomes.lib.IExtraBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -15,6 +10,11 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import extrabiomes.autumn.AutumnWoods;
+import extrabiomes.autumn.Version;
+import extrabiomes.lib.IExtraBlock;
 
 public class BlockExtraFlower extends BlockFlower implements IExtraBlock {
 

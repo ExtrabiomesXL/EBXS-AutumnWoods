@@ -2,8 +2,6 @@ package extrabiomes.autumn.stuff;
 
 import java.util.List;
 
-import net.minecraft.world.biome.BiomeGenBase;
-
 import com.google.common.collect.Lists;
 
 import extrabiomes.autumn.biomes.BiomeAutumnWoods;
