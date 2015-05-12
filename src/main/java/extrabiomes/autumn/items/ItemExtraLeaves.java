@@ -3,7 +3,7 @@ package extrabiomes.autumn.items;
 import java.util.Locale;
 
 import extrabiomes.autumn.blocks.BlockAutumnLeaves;
-import extrabiomes.lib.ExtraItem;
+import extrabiomes.lib.items.ExtraItem;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 

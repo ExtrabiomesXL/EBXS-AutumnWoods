@@ -8,7 +8,7 @@ import net.minecraftforge.common.BiomeDictionary.Type;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import extrabiomes.autumn.stuff.BiomeCollection;
-import extrabiomes.lib.ExtrabiomeGenBase;
+import extrabiomes.lib.worldgen.ExtrabiomeGenBase;
 
 public class BiomeAutumnWoods extends ExtrabiomeGenBase {
 

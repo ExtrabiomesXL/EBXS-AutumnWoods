@@ -24,7 +24,7 @@ import com.google.common.base.Optional;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import extrabiomes.autumn.Version;
-import extrabiomes.lib.IExtraBlock;
+import extrabiomes.lib.blocks.IExtraBlock;
 
 public class BlockAutumnLeaves extends BlockLeavesBase implements IShearable
 {

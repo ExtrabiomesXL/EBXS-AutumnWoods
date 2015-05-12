@@ -5,8 +5,8 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import extrabiomes.autumn.biomes.BiomeAutumnWoods;
-import extrabiomes.lib.ExtrabiomeGenBase;
 import extrabiomes.lib.settings.BiomeSettings;
+import extrabiomes.lib.worldgen.ExtrabiomeGenBase;
 
 public enum BiomeCollection {
 	AUTUMN_WOODS(61, BiomeAutumnWoods.class);

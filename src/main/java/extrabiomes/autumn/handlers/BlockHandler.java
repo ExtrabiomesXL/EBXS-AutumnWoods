@@ -10,12 +10,12 @@ import extrabiomes.autumn.items.ItemExtraLeaves;
 import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.autumn.stuff.BlockCollection;
 import extrabiomes.autumn.stuff.Element;
-import extrabiomes.lib.ExtraItem;
-import extrabiomes.lib.ExtraWorldGenerator;
-import extrabiomes.lib.ExtrabiomeGenBase;
-import extrabiomes.lib.WorldGenDecoration;
+import extrabiomes.lib.items.ExtraItem;
 import extrabiomes.lib.settings.BiomeSettings;
 import extrabiomes.lib.settings.BlockSettings;
+import extrabiomes.lib.worldgen.ExtraWorldGenerator;
+import extrabiomes.lib.worldgen.ExtrabiomeGenBase;
+import extrabiomes.lib.worldgen.WorldGenDecoration;
 
 public abstract class BlockHandler {
 
