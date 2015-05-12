@@ -5,8 +5,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 import extrabiomes.autumn.blocks.BlockAutumnLeaves;
+import extrabiomes.autumn.blocks.BlockAutumnSapling;
 import extrabiomes.autumn.blocks.BlockExtraFlower;
 import extrabiomes.autumn.items.ItemExtraLeaves;
+import extrabiomes.autumn.items.SaplingType;
 import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.autumn.stuff.BlockCollection;
 import extrabiomes.autumn.stuff.Element;
@@ -73,7 +75,18 @@ public abstract class BlockHandler {
 		final BlockSettings settings = BlockCollection.AUTUMN_TREE.settings;
 		if( !settings.isEnabled() ) return;
 		
+		final BlockAutumnSapling block = new BlockAutumnSapling();
+		GameRegistry.registerBlock(block, ExtraItem.class, "sapling");	// TODO: custom sapling item?		
+		OreDictionary.registerOre("treeSapling", new ItemStack(block, 1, Short.MAX_VALUE));
 		
+		Element.SAPLING_AUTUMN_UMBER.set(block, SaplingType.UMBER.metadata());
+		Element.SAPLING_AUTUMN_GOLDENROD.set(block, SaplingType.GOLDENROD.metadata());
+		Element.SAPLING_AUTUMN_VERMILLION.set(block, SaplingType.VERMILLION.metadata());
+		Element.SAPLING_AUTUMN_CITRINE.set(block, SaplingType.CITRINE.metadata());
+		
+		// TODO: register as burnable
+		// TODO: register as bonemealable
+		// TODO: register with Forestry
 	}
 
 
