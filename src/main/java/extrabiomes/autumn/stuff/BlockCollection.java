@@ -7,7 +7,7 @@ import com.google.common.collect.Lists;
 import extrabiomes.lib.settings.BlockSettings;
 
 public enum BlockCollection {
-	FLOWER;
+	FLOWER, AUTUMN_TREE;
 	
 	public final BlockSettings settings;
 	

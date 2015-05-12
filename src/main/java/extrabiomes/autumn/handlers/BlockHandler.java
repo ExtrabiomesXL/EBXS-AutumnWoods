@@ -1,9 +1,15 @@
 package extrabiomes.autumn.handlers;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
+import extrabiomes.autumn.blocks.BlockAutumnLeaves;
 import extrabiomes.autumn.blocks.BlockExtraFlower;
+import extrabiomes.autumn.items.ItemExtraLeaves;
 import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.autumn.stuff.BlockCollection;
+import extrabiomes.autumn.stuff.Element;
 import extrabiomes.lib.ExtraItem;
 import extrabiomes.lib.ExtraWorldGenerator;
 import extrabiomes.lib.ExtrabiomeGenBase;
@@ -14,9 +20,28 @@ import extrabiomes.lib.settings.BlockSettings;
 public abstract class BlockHandler {
 
 	public static void init() {
-		/// createAutumnLeaves();
+		createAutumnLeaves();
 		createFlowers();
 		/// createLogs();
+	}
+	
+	public static void createAutumnLeaves() {
+		final BlockSettings settings = BlockCollection.AUTUMN_TREE.settings;
+		if( !settings.isEnabled() ) return;
+		
+		final BlockAutumnLeaves block = new BlockAutumnLeaves();
+		GameRegistry.registerBlock(block, ItemExtraLeaves.class, "leaves");
+		OreDictionary.registerOre("treeLeaves", new ItemStack(block, 1, Short.MAX_VALUE));
+		
+		// have to register before making block flammable
+        Blocks.fire.setFireInfo(block, 30, 60);
+		
+		Element.LEAVES_AUTUMN_UMBER.set(block, BlockAutumnLeaves.BlockType.UMBER.metadata());
+		Element.LEAVES_AUTUMN_GOLENROD.set(block, BlockAutumnLeaves.BlockType.GOLDENROD.metadata());
+		Element.LEAVES_AUTUMN_VERMILLION.set(block, BlockAutumnLeaves.BlockType.VERMILLION.metadata());
+		Element.LEAVES_AUTUMN_CITRINE.set(block, BlockAutumnLeaves.BlockType.CITRINE.metadata());
+		
+		// TODO: register with Forestry
 	}
 
 	private static void createFlowers() {
@@ -39,7 +64,7 @@ public abstract class BlockHandler {
 			gen.registerGenerator(type.name(), new WorldGenDecoration(block, type.metadata));
 		}
 		
-		// TODO: register with forestry
+		// TODO: register with Forestry
 	}
 
 }

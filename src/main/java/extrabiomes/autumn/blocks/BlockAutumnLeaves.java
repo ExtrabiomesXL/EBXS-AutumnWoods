@@ -152,9 +152,16 @@ public class BlockAutumnLeaves extends BlockLeavesBase implements IShearable
     
     int[] adjacentTreeBlocks;
     
-    public BlockAutumnLeaves(int index, Material material, boolean useFastGraphics)
+    public BlockAutumnLeaves()
     {
-        super(material, useFastGraphics);
+        super(Material.leaves, false);
+        this.setBlockName("extrabiomes.autumn.leaves");
+        this.setTickRandomly(true);
+        this.setHardness(0.2F);
+        this.setLightOpacity(1);
+        this.setStepSound(Block.soundTypeGrass);
+        // TODO: use our own tab
+        this.setCreativeTab(CreativeTabs.tabDecorations);
     }
     
     @Override
