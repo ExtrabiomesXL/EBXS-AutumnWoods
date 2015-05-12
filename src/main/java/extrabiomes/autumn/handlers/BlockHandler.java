@@ -22,9 +22,10 @@ public abstract class BlockHandler {
 	public static void init() {
 		createAutumnLeaves();
 		createFlowers();
+		createSaplings();
 		/// createLogs();
 	}
-	
+
 	public static void createAutumnLeaves() {
 		final BlockSettings settings = BlockCollection.AUTUMN_TREE.settings;
 		if( !settings.isEnabled() ) return;
@@ -66,5 +67,14 @@ public abstract class BlockHandler {
 		
 		// TODO: register with Forestry
 	}
+	
+	
+	private static void createSaplings() {
+		final BlockSettings settings = BlockCollection.AUTUMN_TREE.settings;
+		if( !settings.isEnabled() ) return;
+		
+		
+	}
+
 
 }
