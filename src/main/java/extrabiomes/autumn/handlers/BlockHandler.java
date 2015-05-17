@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 import extrabiomes.autumn.blocks.BlockAutumnLeaves;
+import extrabiomes.autumn.blocks.BlockAutumnLog;
 import extrabiomes.autumn.blocks.BlockAutumnSapling;
 import extrabiomes.autumn.blocks.BlockExtraFlower;
 import extrabiomes.autumn.items.ItemExtraLeaves;
@@ -23,9 +24,10 @@ public abstract class BlockHandler {
 
 	public static void init() {
 		createAutumnLeaves();
+		createAutumnLogs();
 		createFlowers();
 		createSaplings();
-		/// createLogs();
+		/// createCrops();
 	}
 
 	public static void createAutumnLeaves() {
@@ -43,6 +45,22 @@ public abstract class BlockHandler {
 		Element.LEAVES_AUTUMN_GOLENROD.set(block, BlockAutumnLeaves.BlockType.GOLDENROD.metadata());
 		Element.LEAVES_AUTUMN_VERMILLION.set(block, BlockAutumnLeaves.BlockType.VERMILLION.metadata());
 		Element.LEAVES_AUTUMN_CITRINE.set(block, BlockAutumnLeaves.BlockType.CITRINE.metadata());
+		
+		// TODO: register with Forestry
+	}
+	
+	public static void createAutumnLogs() {
+		final BlockSettings settings = BlockCollection.AUTUMN_TREE.settings;
+		if( !settings.isEnabled() ) return;
+		
+		final BlockAutumnLog block = new BlockAutumnLog(settings);
+		GameRegistry.registerBlock(block, ExtraItem.class, "log");
+		OreDictionary.registerOre("logWood", block);
+		
+		// less flamable than leaves
+		Blocks.fire.setFireInfo(block, 5, 5);
+		
+		Element.LOG_AUTUMN.set(block);
 		
 		// TODO: register with Forestry
 	}

@@ -14,7 +14,8 @@ public enum Element {
 	SAPLING_AUTUMN_UMBER,
 	SAPLING_AUTUMN_GOLDENROD,
 	SAPLING_AUTUMN_VERMILLION,
-	SAPLING_AUTUMN_CITRINE;
+	SAPLING_AUTUMN_CITRINE,
+	LOG_AUTUMN;
 	
 	private Optional<ItemStack> itemStack = Optional.absent();
 	
@@ -30,5 +31,8 @@ public enum Element {
 	}
 	public void set(Block block, int metadata) {
 		this.set(new ItemStack(block, 1, metadata));
+	}
+	public void set(Block block) {
+		this.set(new ItemStack(block, 1));
 	}
 }
