@@ -8,6 +8,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import extrabiomes.autumn.Version;
 import extrabiomes.autumn.blocks.BlockExtraFlower.BlockType;
 import extrabiomes.autumn.items.SaplingType;
+import extrabiomes.autumn.worldgen.Generators;
 import extrabiomes.lib.blocks.BlockExtraSapling;
 import extrabiomes.lib.items.IExtraItemType;
 
@@ -15,9 +16,11 @@ public class BlockAutumnSapling extends BlockExtraSapling {
 	public BlockAutumnSapling() {
 		super(SaplingType.values());
 		setBlockName(Version.LOC_PREFIX + ".sapling");
-		for( int k = 0; k < generators.length; ++k ) {
-			registerGenerator(k, null);	// TODO: use correct tree generator
-		}
+		
+		registerGenerator(SaplingType.UMBER.metadata(), Generators.AUTUMN_TREE_UMBER.treeGen());
+		registerGenerator(SaplingType.GOLDENROD.metadata(), Generators.AUTUMN_TREE_GOLDENROD.treeGen());
+		registerGenerator(SaplingType.VERMILLION.metadata(), Generators.AUTUMN_TREE_VERMILLION.treeGen());
+		registerGenerator(SaplingType.CITRINE.metadata(), Generators.AUTUMN_TREE_CITRINE.treeGen());
 	}
 
 	@Override

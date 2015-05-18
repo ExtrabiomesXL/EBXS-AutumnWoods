@@ -13,20 +13,23 @@ import extrabiomes.autumn.items.SaplingType;
 import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.autumn.stuff.BlockCollection;
 import extrabiomes.autumn.stuff.Element;
+import extrabiomes.autumn.worldgen.Generators;
 import extrabiomes.lib.items.ExtraItem;
 import extrabiomes.lib.settings.BiomeSettings;
 import extrabiomes.lib.settings.BlockSettings;
 import extrabiomes.lib.worldgen.ExtraWorldGenerator;
 import extrabiomes.lib.worldgen.ExtrabiomeGenBase;
 import extrabiomes.lib.worldgen.WorldGenDecoration;
+import extrabiomes.lib.worldgen.WorldGenExtraTree;
 
 public abstract class BlockHandler {
 
 	public static void init() {
 		createAutumnLeaves();
 		createAutumnLogs();
-		createFlowers();
 		createSaplings();
+		
+		createFlowers();
 		/// createCrops();
 	}
 
@@ -46,6 +49,11 @@ public abstract class BlockHandler {
 		Element.LEAVES_AUTUMN_VERMILLION.set(block, BlockAutumnLeaves.BlockType.VERMILLION.metadata());
 		Element.LEAVES_AUTUMN_CITRINE.set(block, BlockAutumnLeaves.BlockType.CITRINE.metadata());
 		
+		Generators.AUTUMN_TREE_UMBER.treeGen().setLeaves(Element.LEAVES_AUTUMN_UMBER.get());
+		Generators.AUTUMN_TREE_GOLDENROD.treeGen().setLeaves(Element.LEAVES_AUTUMN_GOLENROD.get());
+		Generators.AUTUMN_TREE_VERMILLION.treeGen().setLeaves(Element.LEAVES_AUTUMN_VERMILLION.get());
+		Generators.AUTUMN_TREE_CITRINE.treeGen().setLeaves(Element.LEAVES_AUTUMN_CITRINE.get());
+		
 		// TODO: register with Forestry
 	}
 	
@@ -61,6 +69,11 @@ public abstract class BlockHandler {
 		Blocks.fire.setFireInfo(block, 5, 5);
 		
 		Element.LOG_AUTUMN.set(block);
+		
+		Generators.AUTUMN_TREE_UMBER.treeGen().setTrunkBlock(block, 0);
+		Generators.AUTUMN_TREE_GOLDENROD.treeGen().setTrunkBlock(block, 0);
+		Generators.AUTUMN_TREE_VERMILLION.treeGen().setTrunkBlock(block, 0);
+		Generators.AUTUMN_TREE_CITRINE.treeGen().setTrunkBlock(block, 0);
 		
 		// TODO: register with Forestry
 	}
@@ -96,12 +109,12 @@ public abstract class BlockHandler {
 		final BlockAutumnSapling block = new BlockAutumnSapling();
 		GameRegistry.registerBlock(block, ExtraItem.class, "sapling");	// TODO: custom sapling item?		
 		OreDictionary.registerOre("treeSapling", new ItemStack(block, 1, Short.MAX_VALUE));
-		
+				
 		Element.SAPLING_AUTUMN_UMBER.set(block, SaplingType.UMBER.metadata());
 		Element.SAPLING_AUTUMN_GOLDENROD.set(block, SaplingType.GOLDENROD.metadata());
 		Element.SAPLING_AUTUMN_VERMILLION.set(block, SaplingType.VERMILLION.metadata());
 		Element.SAPLING_AUTUMN_CITRINE.set(block, SaplingType.CITRINE.metadata());
-		
+				
 		// TODO: register as burnable
 		// TODO: register as bonemealable
 		// TODO: register with Forestry
