@@ -2,6 +2,7 @@ package extrabiomes.autumn.handlers;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
 import extrabiomes.autumn.blocks.BlockAutumnLeaves;
@@ -14,6 +15,7 @@ import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.autumn.stuff.BlockCollection;
 import extrabiomes.autumn.stuff.Element;
 import extrabiomes.autumn.worldgen.Generators;
+import extrabiomes.lib.blocks.BlockExtraSapling;
 import extrabiomes.lib.items.ExtraItem;
 import extrabiomes.lib.settings.BiomeSettings;
 import extrabiomes.lib.settings.BlockSettings;
@@ -114,9 +116,10 @@ public abstract class BlockHandler {
 		Element.SAPLING_AUTUMN_GOLDENROD.set(block, SaplingType.GOLDENROD.metadata());
 		Element.SAPLING_AUTUMN_VERMILLION.set(block, SaplingType.VERMILLION.metadata());
 		Element.SAPLING_AUTUMN_CITRINE.set(block, SaplingType.CITRINE.metadata());
-				
-		// TODO: register as burnable
-		// TODO: register as bonemealable
+		
+		GameRegistry.registerFuelHandler(block.new FuelHandler(block));
+		MinecraftForge.EVENT_BUS.register(block.new BonemealEventHandler(block));
+		
 		// TODO: register with Forestry
 	}
 
