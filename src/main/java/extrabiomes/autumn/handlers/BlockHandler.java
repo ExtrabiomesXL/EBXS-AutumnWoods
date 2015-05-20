@@ -56,6 +56,11 @@ public abstract class BlockHandler {
 		Generators.AUTUMN_TREE_VERMILLION.treeGen().setLeaves(Element.LEAVES_AUTUMN_VERMILLION.get());
 		Generators.AUTUMN_TREE_CITRINE.treeGen().setLeaves(Element.LEAVES_AUTUMN_CITRINE.get());
 		
+		ExtrabiomeGenBase biome = BiomeCollection.AUTUMN_WOODS.settings.getBiome().get();
+		for( Generators gen : Generators.values() ) {
+			biome.registerTreeGenerator(gen.treeGen());
+		}
+		
 		// TODO: register with Forestry
 	}
 	

@@ -19,6 +19,7 @@ public class BiomeAutumnWoods extends ExtrabiomeGenBase {
 		
 		this.temperature = BiomeGenBase.forest.temperature;
 		this.rainfall = BiomeGenBase.forest.rainfall;
+		this.theBiomeDecorator.treesPerChunk = BiomeGenBase.forest.theBiomeDecorator.treesPerChunk;
 		
 		spawnableCreatureList.add(new SpawnListEntry(EntityWolf.class, 5, 4, 4));
 	}
