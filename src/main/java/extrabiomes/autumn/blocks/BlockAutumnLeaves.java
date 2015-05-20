@@ -24,6 +24,7 @@ import com.google.common.base.Optional;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import extrabiomes.autumn.Version;
+import extrabiomes.autumn.stuff.Element;
 import extrabiomes.lib.blocks.IExtraBlock;
 
 public class BlockAutumnLeaves extends BlockLeavesBase implements IShearable
@@ -52,27 +53,27 @@ public class BlockAutumnLeaves extends BlockLeavesBase implements IShearable
         private static void loadCustomBlocks()
         {
         	// TODO: attach real saplings
-        	/*
-            if (Element.SAPLING_AUTUMN_BROWN.isPresent())
+        	
+            if (Element.SAPLING_AUTUMN_UMBER.isPresent())
             {
-                UMBER.sapling = Element.SAPLING_AUTUMN_BROWN.get();
+                UMBER.sapling = Element.SAPLING_AUTUMN_UMBER.get();
             }
             
-            if (Element.SAPLING_AUTUMN_ORANGE.isPresent())
+            if (Element.SAPLING_AUTUMN_GOLDENROD.isPresent())
             {
-                GOLDENROD.sapling = Element.SAPLING_AUTUMN_ORANGE.get();
+                GOLDENROD.sapling = Element.SAPLING_AUTUMN_GOLDENROD.get();
             }
             
-            if (Element.SAPLING_AUTUMN_PURPLE.isPresent())
+            if (Element.SAPLING_AUTUMN_VERMILLION.isPresent())
             {
-                VERMILLION.sapling = Element.SAPLING_AUTUMN_PURPLE.get();
+                VERMILLION.sapling = Element.SAPLING_AUTUMN_VERMILLION.get();
             }
             
-            if (Element.SAPLING_AUTUMN_YELLOW.isPresent())
+            if (Element.SAPLING_AUTUMN_CITRINE.isPresent())
             {
-                CITRINE.sapling = Element.SAPLING_AUTUMN_YELLOW.get();
+                CITRINE.sapling = Element.SAPLING_AUTUMN_CITRINE.get();
             }
-            */
+            
             loadedCustomBlocks = true;
         }
         
