@@ -13,6 +13,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import extrabiomes.autumn.handlers.BlockHandler;
 import extrabiomes.autumn.handlers.ConfigurationHandler;
 import extrabiomes.autumn.handlers.ItemHandler;
+import extrabiomes.autumn.handlers.RecipeHandler;
 import extrabiomes.autumn.proxy.CommonProxy;
 import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.autumn.stuff.BlockCollection;
@@ -64,7 +65,7 @@ public class AutumnWoods extends ModBase implements IEBXSSubMod
     
     public void ebxsPostInit() {
     	super.ebxsPostInit();
-    	/// RecipeHandler.init();
+    	RecipeHandler.init();
     }
 
 	public List<BiomeSettings> getBiomeSettings() {

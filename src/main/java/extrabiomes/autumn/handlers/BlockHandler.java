@@ -8,6 +8,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import extrabiomes.autumn.blocks.BlockAutumnLeaves;
 import extrabiomes.autumn.blocks.BlockAutumnLog;
 import extrabiomes.autumn.blocks.BlockAutumnSapling;
+import extrabiomes.autumn.blocks.BlockAutumnWood;
 import extrabiomes.autumn.blocks.BlockExtraFlower;
 import extrabiomes.autumn.items.ItemExtraLeaves;
 import extrabiomes.autumn.items.SaplingType;
@@ -90,6 +91,14 @@ public abstract class BlockHandler {
 		Generators.AUTUMN_TREE_CITRINE.treeGen().setTrunkBlock(block, 0);
 		Generators.AUTUMN_TREE_CITRINE.treeGenChunk().setTrunkBlock(block, 0);
 		
+		// create the planks while we're in here
+		final BlockAutumnWood plank = new BlockAutumnWood(BlockCollection.AUTUMN_TREE.settings);
+		GameRegistry.registerBlock(plank, ExtraItem.class, "plank");
+		OreDictionary.registerOre("plankWood", plank);
+		
+		Blocks.fire.setFireInfo(plank, 5, 5);
+		Element.PLANK_AUTUMN.set(plank);
+				
 		// TODO: register with Forestry
 	}
 

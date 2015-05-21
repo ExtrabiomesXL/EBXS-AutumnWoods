@@ -15,7 +15,7 @@ public enum Element {
 	SAPLING_AUTUMN_GOLDENROD,
 	SAPLING_AUTUMN_VERMILLION,
 	SAPLING_AUTUMN_CITRINE,
-	LOG_AUTUMN;
+	LOG_AUTUMN, PLANK_AUTUMN;
 	
 	private Optional<ItemStack> itemStack = Optional.absent();
 	
