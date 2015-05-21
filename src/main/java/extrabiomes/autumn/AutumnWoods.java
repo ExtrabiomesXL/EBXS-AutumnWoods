@@ -16,6 +16,7 @@ import extrabiomes.autumn.handlers.ItemHandler;
 import extrabiomes.autumn.proxy.CommonProxy;
 import extrabiomes.autumn.stuff.BiomeCollection;
 import extrabiomes.autumn.stuff.BlockCollection;
+import extrabiomes.autumn.worldgen.Generators;
 import extrabiomes.lib.BiomeUtils;
 import extrabiomes.lib.Const;
 import extrabiomes.lib.IEBXSSubMod;

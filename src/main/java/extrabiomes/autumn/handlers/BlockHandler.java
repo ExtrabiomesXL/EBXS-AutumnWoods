@@ -52,13 +52,17 @@ public abstract class BlockHandler {
 		Element.LEAVES_AUTUMN_CITRINE.set(block, BlockAutumnLeaves.BlockType.CITRINE.metadata());
 		
 		Generators.AUTUMN_TREE_UMBER.treeGen().setLeaves(Element.LEAVES_AUTUMN_UMBER.get());
+		Generators.AUTUMN_TREE_UMBER.treeGenChunk().setLeaves(Element.LEAVES_AUTUMN_UMBER.get());
 		Generators.AUTUMN_TREE_GOLDENROD.treeGen().setLeaves(Element.LEAVES_AUTUMN_GOLENROD.get());
+		Generators.AUTUMN_TREE_GOLDENROD.treeGenChunk().setLeaves(Element.LEAVES_AUTUMN_GOLENROD.get());
 		Generators.AUTUMN_TREE_VERMILLION.treeGen().setLeaves(Element.LEAVES_AUTUMN_VERMILLION.get());
+		Generators.AUTUMN_TREE_VERMILLION.treeGenChunk().setLeaves(Element.LEAVES_AUTUMN_VERMILLION.get());
 		Generators.AUTUMN_TREE_CITRINE.treeGen().setLeaves(Element.LEAVES_AUTUMN_CITRINE.get());
+		Generators.AUTUMN_TREE_CITRINE.treeGenChunk().setLeaves(Element.LEAVES_AUTUMN_CITRINE.get());
 		
 		ExtrabiomeGenBase biome = BiomeCollection.AUTUMN_WOODS.settings.getBiome().get();
 		for( Generators gen : Generators.values() ) {
-			biome.registerTreeGenerator(gen.treeGen());
+			biome.registerTreeGenerator(gen.treeGenChunk());
 		}
 		
 		// TODO: register with Forestry
@@ -78,9 +82,13 @@ public abstract class BlockHandler {
 		Element.LOG_AUTUMN.set(block);
 		
 		Generators.AUTUMN_TREE_UMBER.treeGen().setTrunkBlock(block, 0);
+		Generators.AUTUMN_TREE_UMBER.treeGenChunk().setTrunkBlock(block, 0);
 		Generators.AUTUMN_TREE_GOLDENROD.treeGen().setTrunkBlock(block, 0);
+		Generators.AUTUMN_TREE_GOLDENROD.treeGenChunk().setTrunkBlock(block, 0);
 		Generators.AUTUMN_TREE_VERMILLION.treeGen().setTrunkBlock(block, 0);
+		Generators.AUTUMN_TREE_VERMILLION.treeGenChunk().setTrunkBlock(block, 0);
 		Generators.AUTUMN_TREE_CITRINE.treeGen().setTrunkBlock(block, 0);
+		Generators.AUTUMN_TREE_CITRINE.treeGenChunk().setTrunkBlock(block, 0);
 		
 		// TODO: register with Forestry
 	}
