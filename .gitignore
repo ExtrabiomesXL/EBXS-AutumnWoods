@@ -1,5 +1,5 @@
 # we don't want to accidentally commit an old version of the api
-src/main/java/extrabiomes/lib/
+src/main/java/extrabiomes/lib
 
 *.class
 
