@@ -1,0 +1,27 @@
+item.extrabiomes.autumn.crop.onion.name=Onion
+tile.extrabiomes.autumn.crop.onion.name=Onions
+item.extrabiomes.autumn.seed.onion.name=Onion Seeds
+item.extrabiomes.autumn.food.onion.name=Grilled Onion
+
+tile.extrabiomes.autumn.flower.0.name=Autumn Shrub
+tile.extrabiomes.autumn.flower.1.name=Red Rover
+tile.extrabiomes.autumn.flower.2.name=Delphinium Belladonna
+
+tile.extrabiomes.autumn.leaves.umber.name=Umber Autumn Leaves
+tile.extrabiomes.autumn.leaves.goldenrod.name=Goldenrod Autumn Leaves
+tile.extrabiomes.autumn.leaves.vermillion.name=Vermillion Autumn Leaves
+tile.extrabiomes.autumn.leaves.citrine.name=Citrine Autumn Leaves
+
+tile.extrabiomes.autumn.sapling.0.name=Umber Autumn Sapling
+tile.extrabiomes.autumn.sapling.1.name=Goldenrod Autumn Sapling
+tile.extrabiomes.autumn.sapling.2.name=Vermillion Autumn Sapling
+tile.extrabiomes.autumn.sapling.3.name=Citrine Autumn Sapling
+
+tile.extrabiomes.autumn.log.0.name=Autumn Log
+tile.extrabiomes.autumn.planks.0.name=Autumn Wood Log
+
+tile.extrabiomes.autumn.stairs.0.name=Autumn Stairs
+tile.extrabiomes.autumn.woodslab.0.name=Autumn Slab
+tile.extrabiomes.autumn.door.0.name=Autumn Door
+tile.extrabiomes.autumn.fence.0.name=Autumn Fence
+tile.extrabiomes.autumn.fencegate.0.name=Autumn Fence Gate
