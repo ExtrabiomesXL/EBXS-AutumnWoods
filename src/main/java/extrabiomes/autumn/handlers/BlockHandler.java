@@ -41,7 +41,7 @@ public abstract class BlockHandler {
 		if( !settings.isEnabled() ) return;
 		
 		final BlockAutumnLeaves block = new BlockAutumnLeaves();
-		GameRegistry.registerBlock(block, ItemExtraLeaves.class, "leaves");
+		GameRegistry.registerBlock(block, ItemExtraLeaves.class, "autumn.leaves");
 		OreDictionary.registerOre("treeLeaves", new ItemStack(block, 1, Short.MAX_VALUE));
 		
 		// have to register before making block flammable
@@ -93,7 +93,7 @@ public abstract class BlockHandler {
 		
 		// create the planks while we're in here
 		final BlockAutumnWood plank = new BlockAutumnWood(BlockCollection.AUTUMN_TREE.settings);
-		GameRegistry.registerBlock(plank, ExtraItem.class, "plank");
+		GameRegistry.registerBlock(plank, ExtraItem.class, "autumn.plank");
 		OreDictionary.registerOre("plankWood", plank);
 		
 		Blocks.fire.setFireInfo(plank, 5, 5);
@@ -115,7 +115,7 @@ public abstract class BlockHandler {
         GameRegistry.registerWorldGenerator(gen, 50);
 		
 		final BlockExtraFlower block = new BlockExtraFlower();
-		GameRegistry.registerBlock(block, ExtraItem.class, "flower");
+		GameRegistry.registerBlock(block, ExtraItem.class, "autumn.flower");
 		
 		for( BlockExtraFlower.BlockType type : BlockExtraFlower.BlockType.values() ) {
 			autumnBiome.addFlower(block, type.metadata, type.weight);
@@ -131,7 +131,7 @@ public abstract class BlockHandler {
 		if( !settings.isEnabled() ) return;
 		
 		final BlockAutumnSapling block = new BlockAutumnSapling();
-		GameRegistry.registerBlock(block, ExtraItem.class, "sapling");	// TODO: custom sapling item?		
+		GameRegistry.registerBlock(block, ExtraItem.class, "autumn.sapling");	// TODO: custom sapling item?		
 		OreDictionary.registerOre("treeSapling", new ItemStack(block, 1, Short.MAX_VALUE));
 				
 		Element.SAPLING_AUTUMN_UMBER.set(block, SaplingType.UMBER.metadata());
