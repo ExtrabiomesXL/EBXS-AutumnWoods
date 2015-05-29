@@ -4,6 +4,7 @@ import net.minecraft.entity.passive.EntityWolf;
 import net.minecraft.world.ColorizerFoliage;
 import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.biome.BiomeGenBase.Height;
 import net.minecraftforge.common.BiomeDictionary.Type;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -16,6 +17,7 @@ public class BiomeAutumnWoods extends ExtrabiomeGenBase {
 		super(BiomeCollection.AUTUMN_WOODS.settings, Type.FOREST);
 		setColor(0xF29C11);
 		setBiomeName("Autumn Woods");
+		setHeight(BiomeGenBase.height_Default);
 		
 		this.temperature = BiomeGenBase.forest.temperature;
 		this.rainfall = BiomeGenBase.forest.rainfall;
