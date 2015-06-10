@@ -9,7 +9,7 @@ import extrabiomes.autumn.blocks.BlockAutumnLeaves;
 import extrabiomes.autumn.blocks.BlockAutumnLog;
 import extrabiomes.autumn.blocks.BlockAutumnSapling;
 import extrabiomes.autumn.blocks.BlockAutumnWood;
-import extrabiomes.autumn.blocks.BlockExtraFlower;
+import extrabiomes.autumn.blocks.BlockAutumnFlower;
 import extrabiomes.autumn.items.ItemExtraLeaves;
 import extrabiomes.autumn.items.SaplingType;
 import extrabiomes.autumn.stuff.BiomeCollection;
@@ -114,10 +114,10 @@ public abstract class BlockHandler {
 		gen.registerBiome(autumnSettings);
         GameRegistry.registerWorldGenerator(gen, 50);
 		
-		final BlockExtraFlower block = new BlockExtraFlower();
+		final BlockAutumnFlower block = new BlockAutumnFlower();
 		GameRegistry.registerBlock(block, ExtraItem.class, "autumn.flower");
 		
-		for( BlockExtraFlower.BlockType type : BlockExtraFlower.BlockType.values() ) {
+		for( BlockAutumnFlower.BlockType type : BlockAutumnFlower.BlockType.values() ) {
 			autumnBiome.addFlower(block, type.metadata, type.weight);
 			gen.registerGenerator(type.name(), new WorldGenDecoration(block, type.metadata));
 		}

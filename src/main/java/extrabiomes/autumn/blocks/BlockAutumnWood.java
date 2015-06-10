@@ -16,7 +16,7 @@ import net.minecraft.world.IBlockAccess;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import extrabiomes.autumn.Version;
-import extrabiomes.autumn.blocks.BlockExtraFlower.BlockType;
+import extrabiomes.autumn.blocks.BlockAutumnFlower.BlockType;
 import extrabiomes.lib.blocks.IExtraBlock;
 import extrabiomes.lib.settings.BlockSettings;
 

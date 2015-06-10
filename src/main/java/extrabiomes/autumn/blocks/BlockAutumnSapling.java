@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import extrabiomes.autumn.Version;
-import extrabiomes.autumn.blocks.BlockExtraFlower.BlockType;
+import extrabiomes.autumn.blocks.BlockAutumnFlower.BlockType;
 import extrabiomes.autumn.items.SaplingType;
 import extrabiomes.autumn.worldgen.Generators;
 import extrabiomes.lib.blocks.BlockExtraSapling;
