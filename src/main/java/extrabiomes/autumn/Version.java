@@ -6,7 +6,7 @@ public abstract class Version {
 	public static final String MOD_ID		= "ExtrabiomesAutumnWoods";
 	public static final String MOD_NAME		= "Extrabiomes Autumn Woods";
 	public static final String VERSION		= "@VERSION@";
-	public static final String API_VERSION	= "0.1.2";
+	public static final String API_VERSION	= "0.1.3";
 
 	public static final String LOC_PREFIX   = "extrabiomes.autumn";
 	
