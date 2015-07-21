@@ -42,11 +42,8 @@ public class BlockAutumnFlower extends BlockExtraFlower {
 		public IIcon getIcon() {
 			return icon;
 		}
-		
-		@SideOnly(Side.CLIENT)
-		public IIcon registerIcon(IIconRegister iconRegister) {
-			icon = iconRegister.registerIcon(Version.TEXTURE_PATH + this.texture);
-			return icon;
+		public void setIcon(IIcon icon) {
+			this.icon = icon;
 		}
 
 		@Override
@@ -62,6 +59,11 @@ public class BlockAutumnFlower extends BlockExtraFlower {
 		@Override
 		public int getColor() {
 			return color;
+		}
+		
+		@Override
+		public String getTexture() {
+			return texture;
 		}
 	}
 	
