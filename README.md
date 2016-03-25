@@ -1,2 +1,3 @@
-# forge-mod-template
-A basic template for a Minecraft Forge mod.
+# Extrabiomes Autumn Woods
+
+Adds the Autumn Woods biome. Requires EBXS-Core to function.
