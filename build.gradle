@@ -18,6 +18,11 @@ buildscript {
 apply plugin: 'forge'
 
 version = version_major + "." + version_minor + "." + version_revision
+def jenkins_build = System.getenv("BUILD_NUMBER")
+if ( jenkins_build != null ) {
+	version = version + "." + jenkins_build
+}
+
 group   = "extrabiomes.autumn"
 
 minecraft {
@@ -32,6 +37,8 @@ jar {
 	// path to your Minecraft mods folder for quicker testing
 	exclude 'extrabiomes/core'
 	destinationDir = file 'output'
+
+	baseName = "ebxs-autumnwoods"
 }
 
 dependencies {
